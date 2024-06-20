@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Button, Card, Col, Container, Image, Row } from 'react-bootstrap';
 import bigStar from '../assets/bigStar.png';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { fetchOneDevice } from '../http/deviceAPI';
+import { Context } from '../index';
+import { SHOP_ROUTE } from '../utils/consts';
 
 const DevicePage = () => {
     const [device, setDevice] = useState({ info: [] });
     const { id } = useParams();
+    const {basket } = useContext(Context);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -20,9 +24,14 @@ const DevicePage = () => {
 
         fetchData();
     }, [id]);
-
+    const addToBasket = () => {
+        basket.addToBasket(device);
+    }
     return (
         <Container className="mt-3">
+            <Button variant="outline-success" onClick={() => navigate(SHOP_ROUTE)}>
+                На главную
+            </Button>
             {device && (
                 <Row>
                     <Col md={4}>
@@ -51,7 +60,7 @@ const DevicePage = () => {
                             style={{ width: 300, height: 300, fontSize: 32, border: '5px solid lightgray' }}
                         >
                             <h3>От: {device.price} руб.</h3>
-                            <Button variant="outline-success">Добавить в корзину</Button>
+                            <Button variant="outline-success" onClick={addToBasket}>Добавить в корзину</Button>
                         </Card>
                     </Col>
                 </Row>
