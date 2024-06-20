@@ -25,16 +25,16 @@ const NavBar = observer(() => {
                 </Navbar.Brand>
                 {user.isAuth ? (
                     <Nav className="ml-auto">
-                        <Button variant="outline-light" onClick={() => navigate(ADMIN_ROUTE)}>
+                        <Button variant="outline-primary" onClick={() => navigate(ADMIN_ROUTE)}>
                             Админ панель
                         </Button>
-                        <Button variant="outline-light" onClick={logOut} className="ml-2">
+                        <Button variant="light" onClick={logOut} style={{ marginLeft: '5px' }}>
                             Выйти
                         </Button>
                     </Nav>
                 ) : (
                     <Nav className="ml-auto">
-                        <Button variant="outline-light" onClick={() => navigate(LOGIN_ROUTE)}>
+                        <Button variant="outline-success" onClick={() => navigate(LOGIN_ROUTE)}>
                             Авторизация
                         </Button>
                     </Nav>

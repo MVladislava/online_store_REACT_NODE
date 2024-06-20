@@ -9,11 +9,23 @@ const Pages = observer(() => {
     const pages = []
 
     for (let i = 0; i < pageCount; i++) {
-        pages.push(i + 1)
+        pages.push(i+1)
     }
+    const handleNext = () => {
+        if (device.page < pageCount) {
+            device.setPage(device.page + 1);
+        }
+    };
 
+    const handlePrev = () => {
+        if (device.page > 1) {
+            device.setPage(device.page - 1);
+        }
+    };
     return (
-        <Pagination className="mt-3">
+        <Pagination className="mt-3" >
+            <Pagination.First onClick={() => device.setPage(1)}/>
+            <Pagination.Prev onClick={handlePrev}/>
             {pages.map(page =>
                 <Pagination.Item
                     key={page}
@@ -23,6 +35,8 @@ const Pages = observer(() => {
                     {page}
                 </Pagination.Item>
             )}
+            <Pagination.Next onClick={handleNext}/>
+            <Pagination.Last onClick={() => device.setPage(pageCount)}/>
         </Pagination>
     );
 });
