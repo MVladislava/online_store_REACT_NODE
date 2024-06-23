@@ -42,15 +42,13 @@
 ```bash
 cd client
 npm install
+npm i axios react-router-dom mobx mobx-react-lite
 cd ..
 ```
 Для установки необходимых зависимостей выполните команды:
 ```bash
 cd server
 npm install
-```
-```bash
-cd client
 npm i axios react-router-dom mobx mobx-react-lite
 ```
 Для запуска frontend сервера используйте команду:
@@ -65,7 +63,6 @@ npm run dev
 ```
 Для создания production сборки выполните:
 ```bash
-
 npm run build
 ```
 ### Зачем вы разработали этот проект?
@@ -81,8 +78,8 @@ npm run build
 
 - [Евгений Новосёлов]() — Back-End Engineer
 - [Владислава Мясникова]() — Front-End Engineer
-- [Елизавета Сидорова]() — 
-- [Никита Зубенин]() — 
+- [Елизавета Сидорова]() — Back-End
+- [Никита Зубенин]() — Data Base Developer, Analyst
 
 ## Источники
 Вдохновение...
