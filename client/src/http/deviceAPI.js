@@ -6,6 +6,26 @@ export const createType = async (type) => {
     return data
 }
 
+export const deleteType = async (id) => {
+    let str = `api/type/${id}`
+    console.log(str)
+    const {data} = await $authHost.post(`api/type/${id}`)
+    return data
+}
+
+export const deleteBrand = async (id) => {
+    let str = `api/brand/${id}`
+    const {data} = await $authHost.post(str)
+    return data
+}
+
+export const deleteDevice = async (id) => {
+    let str = `api/device/del/${id}`
+    console.log(str)
+    const {data} = await $authHost.post(str)
+    return data
+}
+
 export const fetchTypes = async () => {
     const {data} = await $host.get('api/type')
     return data
@@ -26,7 +46,7 @@ export const createDevice = async (device) => {
     return data
 }
 
-export const fetchDevices = async (typeId, brandId, page, limit = 5) => {
+export const fetchDevices = async (typeId, brandId, page, limit) => {
     const { data } = await $host.get('api/device', {
         params: { typeId, brandId, page, limit }
     });
