@@ -1,0 +1,73 @@
+.navBar{
+    margin-bottom: 15px;
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-top: 3px;
+    box-shadow: 3px 4px 6px rgba(58, 31, 31, 0.212);
+    background-color: #9e9595bd;
+    border-radius: 10px;
+}
+.buttonExit{
+    width: 100px;
+}
+.admin{
+    width: 150px;
+}
+.glow-on-hover {
+    height: 40px;
+    border: none;
+    outline: none;
+    color: #000000;
+    background: #9e9595bd;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff000052, #ff730052, #fffb0052, #48ff0052, #00ffd552, #002bff52, #7a00ff52, #ff00c852, #ff000052);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 300%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #9e9595bd;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}

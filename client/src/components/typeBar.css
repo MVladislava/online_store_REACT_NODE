@@ -1,0 +1,17 @@
+.type-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.type-item {
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.type-item.active {
+    border-color:#9e9595bd; /* Цвет бордера для активного элемента */
+    background-color: #796d852a; /* Цвет фона для активного элемента */
+}
