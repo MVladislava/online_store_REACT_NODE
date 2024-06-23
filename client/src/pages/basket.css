@@ -1,0 +1,53 @@
+.basket-container {
+    position: fixed;
+    top: 100px; /* Регулируйте значение, чтобы изменить вертикальное положение */
+    right: 50px; /* Регулируйте значение, чтобы изменить горизонтальное положение */
+    width: 300px; /* Задайте фиксированную ширину контейнера */
+    background-color: #4738331a; /* Цвет фона контейнера */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для контейнера */
+    padding: 20px; /* Внутренние отступы для контейнера */
+    border-radius: 8px; /* Скругление углов контейнера */
+    z-index: 1000; /* Z-index, чтобы контейнер был над другими элементами */
+}
+
+
+.basket-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.item-container {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+.item-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.item-price {
+    font-size: 16px;
+    color: #888;
+}
+
+.item-buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.remove-button {
+    
+}
+
+.total-price {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.clear-button {
+    margin-top: 20px;
+}

@@ -3,11 +3,11 @@ import { Context } from '../index';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { ADMIN_ROUTE, BASKET_ROUTE, LOGIN_ROUTE, SHOP_ROUTE } from '../utils/consts';
+import { ADMIN_ROUTE, LOGIN_ROUTE, SHOP_ROUTE } from '../utils/consts';
 import { Button } from 'react-bootstrap';
 import { observer } from 'mobx-react-lite';
 import Container from 'react-bootstrap/Container';
-
+import './navBar.css'
 
 const NavBar = observer(() => {
     const { user } = useContext(Context);
@@ -19,19 +19,19 @@ const NavBar = observer(() => {
     };
 
     return (
-        <Navbar bg="dark" variant="dark">
+        <Navbar className="navBar">
             <Container>
-                <Navbar.Brand as={NavLink} to={SHOP_ROUTE} style={{ color: 'white' }}>
-                    КупиДевайс
+                <Navbar.Brand as={NavLink} to={SHOP_ROUTE} style={{ color: 'black' }}>
+                    GadgetWave
                 </Navbar.Brand>
                 {user.isAuth ? (
-                    <Nav className="ml-auto">
-                        <Button variant="outline-primary" onClick={() => navigate(ADMIN_ROUTE)}>
+                    <Nav>
+                        <button className='admin glow-on-hover' onClick={() => navigate(ADMIN_ROUTE)}>
                             Админ панель
-                        </Button>
-                        <Button variant="light" onClick={logOut} style={{ marginLeft: '5px' }}>
+                        </button>
+                        <button className='glow-on-hover buttonExit' onClick={logOut} style={{ marginLeft: '15px' }}>
                             Выйти
-                        </Button>
+                        </button>
                     </Nav>
                 ) : (
                     <Nav className="ml-auto">

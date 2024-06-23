@@ -1,0 +1,54 @@
+/* deviceItem.css */
+.device-item {
+    margin: 10px;
+    cursor: pointer;
+  }
+  
+  .device-card {
+    width: 250px;
+    height: auto;
+    transition: transform 0.2s;
+    background-color: rgba(255, 255, 255, 0.075);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .device-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .device-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    background-color: transparent; /* Это для уверенности, что фон будет прозрачным */
+  }
+  
+  .device-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    color: #383c3f;
+  }
+  
+  .device-name {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .device-rating {
+    display: flex;
+    align-items: center;
+  }
+  
+  .device-rating-icon {
+    width: 16px;
+    height: 16px;
+    margin-left: 5px;
+  }
