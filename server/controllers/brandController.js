@@ -3,8 +3,16 @@ const ApiError = require('../error/ApiError')
 class BrandController{
     async create(req,res){
         const {name} = req.body
-        const brand = await Brand.create({name})
-        return res.json(brand)
+        try
+        {
+            const brand = await Brand.create({name})
+            return res.json(brand)}
+        catch (error)
+        {
+            if (error.name === 'SequelizeUniqueConstraintError') {
+                return res.status(400).json({ error: 'Already exists.' });
+            } 
+        }
     }
 
     async getAll(req,res){
