@@ -1,5 +1,7 @@
 const sequelize = require('../db')
 const {DataTypes} = require('sequelize')
+const path = require('path');
+const fs = require('fs');
 
 const User = sequelize.define('user',{
     id: {type: DataTypes.INTEGER, primaryKey: true,unique: true, autoIncrement: true},
@@ -22,7 +24,18 @@ const Device = sequelize.define('device',{
     price: {type: DataTypes.INTEGER, allowNull: false},
     rating: {type: DataTypes.INTEGER, defaultValue: 0},
     img: {type: DataTypes.STRING, allowNull: false},
-})
+}, {
+    hooks: {
+        afterDestroy: async (instance, options) => {
+            const filePath = path.resolve(__dirname, '..', 'static', instance.img);
+            try {
+                await fs.promises.unlink(filePath);
+            } catch (err) {
+                console.error(`Filed to delete file: ${filePath}`, err);
+            }
+            }
+        }
+    })
 
 const Type = sequelize.define('type',{
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},

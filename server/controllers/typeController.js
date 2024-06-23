@@ -3,8 +3,16 @@ const ApiError = require('../error/ApiError')
 class TypeController{
     async create(req,res){
         const {name} = req.body
-        const type = await Type.create({name})
-        return res.json(type)
+        try
+        {
+            const type = await Type.create({name})
+            return res.json(type)}
+        catch (error)
+        {
+            if (error.name === 'SequelizeUniqueConstraintError') {
+                return res.status(400).json({ error: 'Already exists.' });
+            } 
+        }
     }
 
     async getAll(req,res){
