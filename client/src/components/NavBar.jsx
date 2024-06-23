@@ -19,28 +19,26 @@ const NavBar = observer(() => {
     };
 
     return (
-        <Navbar className="navBar">
-            <Container>
-                <Navbar.Brand as={NavLink} to={SHOP_ROUTE} style={{ color: 'black' }}>
+        <Navbar className="navBar" expand="lg">
+                <Navbar.Brand as={NavLink} to={SHOP_ROUTE} style={{ color: 'black', marginLeft: '20px'}}>
                     GadgetWave
                 </Navbar.Brand>
                 {user.isAuth ? (
-                    <Nav>
+                    <div>
                         <button className='admin glow-on-hover' onClick={() => navigate(ADMIN_ROUTE)}>
                             Админ панель
                         </button>
-                        <button className='glow-on-hover buttonExit' onClick={logOut} style={{ marginLeft: '15px' }}>
+                        <button className='buttonExit glow-on-hover' onClick={logOut} style={{ marginLeft: '15px' }}>
                             Выйти
                         </button>
-                    </Nav>
+                    </div>
                 ) : (
-                    <Nav className="ml-auto">
-                        <Button variant="outline-success" onClick={() => navigate(LOGIN_ROUTE)}>
+                    <div>
+                        <button className="auth glow-on-hover" onClick={() => navigate(LOGIN_ROUTE)}>
                             Авторизация
-                        </Button>
-                    </Nav>
+                        </button>
+                    </div>
                 )}
-            </Container>
         </Navbar>
     );
 });

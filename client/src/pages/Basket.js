@@ -14,14 +14,14 @@ const Basket = observer(() => {
             const timer = setTimeout(() => {
                 setFadeOut(true);
                 setTimeout(() => setError(null), 1000);  // Убираем сообщение после завершения анимации
-            }, 3000);  // Держим сообщение на экране 3 секунды
+            }, 2000);  // Держим сообщение на экране 3 секунды
             return () => clearTimeout(timer);
         }
     }, [error]);
 
     const handleClearBasket = () => {
         if (basket.basket.length === 0) {
-            setError('Корзина уже пуста');
+            setError('Корзина пуста');
             setFadeOut(false);
             return;
         }
@@ -30,7 +30,7 @@ const Basket = observer(() => {
     };
 
     return (
-        <Container className="basket">
+        <div className="basket">
             <h1>Корзина</h1>
             {error && <Alert variant="danger" className={`error-message ${fadeOut ? 'fade-out' : ''}`}>{error}</Alert>}
             <ListGroup>
@@ -54,10 +54,10 @@ const Basket = observer(() => {
                 ))}
             </ListGroup>
             <h3 className="mt-3">Итого: {basket.totalPrice}₽</h3>
-            <button className="remove-button" onClick={handleClearBasket} >
+            <button className="remove-button" onClick={handleClearBasket}>
                 Очистить корзину
             </button>
-        </Container>
+        </div>
     );
 });
 

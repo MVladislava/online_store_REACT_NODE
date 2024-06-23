@@ -30,9 +30,15 @@ const Auth = observer(() => {
             user.setIsAuth(true); // Устанавливаем статус аутентификации в true
             history.push(SHOP_ROUTE); // Переходим на маршрут магазина
         } catch (e) {
-            alert(e.response.data.message); // Выводим сообщение об ошибке
+            if (e.response && e.response.data && e.response.data.message) {
+                alert(e.response.data.message); // Выводим сообщение об ошибке
+            } else {
+                console.error('Ошибка во время выполнения запроса:', e);
+                alert('Произошла ошибка. Пожалуйста, попробуйте позже.');
+            }
         }
     };
+    
 
     return (
         <Container className="d-flex justify-content-center align-items-center" style={{ height: window.innerHeight - 54 }}>
