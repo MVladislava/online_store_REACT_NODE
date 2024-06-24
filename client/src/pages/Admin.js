@@ -15,7 +15,7 @@ const Admin = () => {
     const [deviceVisible, setDeviceVisible] = useState(false)
     const [delDeviceVisible, setDelDeviceVisible] = useState(false)
     return (
-        <Container className="d-flex flex-column align-items-center">
+        <Container className="d-flex flex-column" style={{marginRight: 0}}>
             <Button
                 variant={"outline-success"}
                 className="mt-4 p-2 w-50"

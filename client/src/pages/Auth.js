@@ -30,14 +30,21 @@ const Auth = observer(() => {
             user.setIsAuth(true); // Устанавливаем статус аутентификации в true
             history.push(SHOP_ROUTE); // Переходим на маршрут магазина
         } catch (e) {
-            alert(e.response.data.message); // Выводим сообщение об ошибке
+            if (e.response && e.response.data && e.response.data.message) {
+                alert(e.response.data.message); // Выводим сообщение об ошибке
+            } else {
+                console.error('Ошибка во время выполнения запроса:', e);
+                alert('Произошла ошибка. Пожалуйста, попробуйте позже.');
+            }
         }
     };
+    
 
     return (
-        <Container className="d-flex justify-content-center align-items-center" style={{ height: window.innerHeight - 54 }}>
-            <Card style={{ width: 600 }} className="p-5">
-                <h2 class="fs-3 text-center">{isLogin ? 'Авторизация' : 'Регистрация'}</h2>
+        <Container className="d-flex justify-content-center align-items-center" style={{ height: window.innerHeight - 54, marginRight: 0}}>
+            <Card style={{ width: 600}} className="p-5">
+                <h2 className="m-auto">{isLogin ? 'Авторизация' : 'Регистрация'}</h2>
+
                 <Form className="d-flex flex-column">
                     <Form.Control
                         className="mt-3 w-75"

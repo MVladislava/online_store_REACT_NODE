@@ -56,6 +56,15 @@ const Shop = observer(() => {
                     <Basket />
                 </Col>
             </Row>
+            <footer>
+            <p>Developed by:</p>
+                    <ul>
+                        <li>Евгений Новосёлов — Back-End Engineer</li>
+                        <li>Владислава Мясникова — Front-End Engineer</li>
+                        <li>Елизавета Сидорова — Back-End Engineer</li>
+                        <li>Никита Зубенин — Data Base Developer, Analyst</li>
+                    </ul>
+            </footer>
         </Container>
     );
 });

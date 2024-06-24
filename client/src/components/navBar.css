@@ -1,9 +1,10 @@
 .navBar{
+    position: fixed;
     margin-bottom: 15px;
-    margin-left: 300px;
-    margin-right: 300px;
+    left: 9%;
+    width: 1590px;
     margin-top: 3px;
-    box-shadow: 3px 4px 6px rgba(58, 31, 31, 0.212);
+    box-shadow: 3px 4px 6px rgba(204, 180, 180, 0.212);
     background-color: #9e9595bd;
     border-radius: 10px;
 }
@@ -12,6 +13,11 @@
 }
 .admin{
     width: 150px;
+    margin-left: 1140px;
+}
+.auth{
+    width: 150px;
+    margin-left: 1250px;
 }
 .glow-on-hover {
     height: 40px;
@@ -66,8 +72,3 @@
     border-radius: 10px;
 }
 
-@keyframes glowing {
-    0% { background-position: 0 0; }
-    50% { background-position: 400% 0; }
-    100% { background-position: 0 0; }
-}

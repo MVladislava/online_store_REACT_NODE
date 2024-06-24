@@ -9,23 +9,23 @@ const TypeBar = observer(() => {
 
     const handleTypeClick = (type) => {
         if (device.selectedType.id === type.id) {
-            device.setSelectedType({}); // Сбросить выбор, если выбранный тип нажат повторно
+            device.setSelectedType({}); 
         } else {
-            device.setSelectedType(type); // Установить новый выбранный тип
+            device.setSelectedType(type);
         }
     };
     return (
-        <ul className="type-list">
+        <div >
             {device.types.map(type => (
-                <li
+                <ul
                     className={`type-item ${type.id === device.selectedType.id ? 'active' : ''}`}
                     onClick={() => handleTypeClick(type)}
                     key={type.id}
                 >
                     {type.name}
-                </li>
+                </ul>
             ))}
-        </ul>
+        </div>
     );
 });
 

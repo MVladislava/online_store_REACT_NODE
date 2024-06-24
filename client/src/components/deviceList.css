@@ -1,5 +1,5 @@
 .device-list {
-    display: grid;
+    display: fixed;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     padding: 20px;
     margin: 0 auto;
