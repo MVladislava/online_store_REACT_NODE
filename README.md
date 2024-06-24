@@ -7,7 +7,7 @@
 
 ## Содержание
 - [Технологии](#технологии)
-- [Начало работы](#начало-работы)
+- [Начало работы](#использование)
 - [Contributing](#contributing)
 - [To do](#to-do)
 - [Команда проекта](#команда-проекта)
@@ -22,11 +22,15 @@
 Для запуска проекта:
 1. Установите [Node.js](https://nodejs.org/en) v20+
 2. Установите базу данных [PostgreSQL](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads) v16.3
-3. Скачайте json файл для базы данных [online_store2.json](https://github.com/user-attachments/files/15943981/online_store2.json)
-4. Откройте PgAdmin4, введите пароль и импортируйте файл json
-![image](https://github.com/Johny314/online_store_REACT_NODE/assets/115394426/f4cc9f08-ad81-4325-b605-e925fc3bde52)
-![image](https://github.com/Johny314/online_store_REACT_NODE/assets/115394426/f52ee702-1844-41b0-8c87-1671802ecc73)
-5. Склонируйте репозиторий с GitHub в среду разработки
+3. Скачайте и разархивируйте файл для базы данных [online_store3.zip](https://github.com/user-attachments/files/15949482/online_store3.zip)
+4. Откройте PgAdmin4, введите пароль и создайте базу данных "online_store"
+![image](https://github.com/Johny314/online_store_REACT_NODE/assets/115394426/3d14b641-b7f0-4669-b951-e37bc264fb36)
+5. Восстановите базу данных с помощью файла
+![image](https://github.com/Johny314/online_store_REACT_NODE/assets/115394426/2264f345-b2e9-4649-bdba-eb489d614c4a)
+7. Склонируйте репозиторий с GitHub в среду разработки
+8. В файле .env измените пароль для доступа к БД
+![image](https://github.com/Johny314/online_store_REACT_NODE/assets/115394426/801f422e-7871-4712-84fc-2d9f605800ef)
+
 
 
 ## Разработка
